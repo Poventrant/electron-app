@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="./app/stylesheets/style.css">
+  <link rel="stylesheet" href="./app/bower_components/angular-bootstrap/bootstrap.superhero.min.css">
+  <link rel="stylesheet" href="./app/bower_components/sweetalert/dist/sweetalert.css"></head>
+<body ng-app="mainApp" ng-controller="AppCtrl as appCtrl">
 
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
+  <div class="container">
+
+    <header class="row">
+      <div class="btn btn-primary pull-right" id="frame-close" ng-click="appCtrl.frameClose()"> 
+        <i class="glyphicon glyphicon-remove"></i>
+      </div>
+      <div class="btn btn-primary pull-right" id="frame-max" ng-click="appCtrl.frameMax()"> 
+        <i class="glyphicon glyphicon-fullscreen"></i>
+      </div>
+      <div class="btn btn-primary pull-right" id="frame-min" ng-click="appCtrl.frameMin()">
+        <i class="glyphicon glyphicon-minus"></i>
+      </div>
+    </header>
+
+    <div ui-view></div>
+
+    <footer class="row">
+      <!-- <div class="col-md-5 center-block">13349086 Kaze</div> -->
+    </footer>
+
+  </div>
+
+</body>
+  <script src="./app/bower_components/angular/angular.min.js"></script>
+  <script src="./app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="./app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="./app/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./app/bower_components/jquery/dist/jquery.min.js"></script>
+
+  <script src="./app/script/jwxt/AppCtrl.js"></script>
+  <script src="./app/script/jwxt/LoginCtrl.js"></script>
+  <script src="./app/script/jwxt/HomeCtrl.js"></script>
+
+  <script src="./app/resources/gt.js"></script>
+  <script src="./app/resources/md5.js"></script>
+  <script src="./app/resources/geetest.js"></script>
+
 </html>

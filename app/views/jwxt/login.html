@@ -1,0 +1,41 @@
+<style>
+	#loginForm label {
+		margin-top:5px;
+	}
+	#loginForm {
+		background:#0E9BBE;
+		background: linear-gradient(left, #af55b2, #866dc0, #8EC4E9, #0E9BBE, #2e65a8);
+		background: -webkit-linear-gradient(left,#af55b2,#866dc0,#8EC4E9,#0E9BBE,#2e65a8);
+		background: -moz-linear-gradient(left, #af55b2, #866dc0, #8EC4E9, #0E9BBE, #2e65a8);
+		background: -o-linear-gradient(left, #af55b2, #866dc0, #8EC4E9, #0E9BBE, #2e65a8);
+		background: -ms-linear-gradient(left, #af55b2, #866dc0, #8EC4E9, #0E9BBE, #2e65a8);
+		border-radius: 2px;
+		padding-right:30px !important;
+		padding-top:10px !important;
+		margin-left:10%;
+		margin-top:15%;
+		box-shadow: #212121 5px 5px 5px;
+	}
+</style>
+<div class="container row center-block">
+	<form id="loginForm" name="loginform" method="POST" my-enter="loginCtrl.doSubmit()" ng-init="loginCtrl.getCaptcha='getCaptcha'" class="col-sm-4">
+		<div class="form-group row">
+			<div ng-bind="loginCtrl.loginHit" style="height:20px" class="text-danger text-center"></div>
+		</div>
+		<div class="form-group clearfix">
+			<label class="col-sm-3 text-right vertical-center">学号</label>
+			<div class="col-sm-9">
+				<input type="text" ng-model="loginCtrl.username" ng-required="true" name="username" class="form-control"></div>
+		</div>
+		<div class="form-group clearfix">
+			<label class="col-sm-3 text-right">密码</label>
+			<div class="col-sm-9">
+				<input type="password" ng-model="loginCtrl.password" ng-required="true" name="password" class="form-control"></div>
+		</div>
+		<div class="form-group clearfix">
+			<div id="popup-captcha"></div>
+		</div>
+		<div class="form-group row text-center">
+			<input ng-click="loginCtrl.doSubmit()" type="button" value="登录" class="btn btn-primary"></div>
+	</form>
+</div>
